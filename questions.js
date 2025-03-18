@@ -1,3 +1,6 @@
+# ALL THE QUESTIONS WILL BE ADDED HERE 
+
+
 const questions = [
     {
         question: "What is the capital of India?",
