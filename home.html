@@ -1,4 +1,38 @@
-function startQuiz(){
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Home.css">
+</head>
+<body>
+    <nav>
+
+            <div class="logo">
+                <h1>Quizee</h1>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="./home.html">Home</a></li>
+                    <li><a href="./about_us.html">About</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+            </div>
+      
+    </nav>
+    <div class="container">
+        <div class="heading">
+            <h1>Welcome to Quizee!!</h1>
+        </div>
+        <div class="inner-text">
+            <p >lets test your knowledge</p>
+            <button onclick="startQuiz()" >start</button>
+        </div>
+    </div>
+</body>
+<script>
+    function startQuiz(){
     window.location.href = "quiz.html";
 }
 
@@ -51,3 +85,5 @@ function checkAnswer(index){
     }
 }
 loadQue();
+</script>
+</html>
