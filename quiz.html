@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="quiz.css">
+    <link rel="stylesheet" href="Home.css">
+</head>
+<body >
+    <nav>
+        <div class="logo">
+            <h1>Quizee</h1>
+        </div>
+        <div class="menu">
+            <ul>
+                <li><a href="./home.html">Home</a></li>
+                <li><a href="./about_us.html">About</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="quiz-container">
+        <h2 id="question">Question will appear here</h2>
+        <div id="options">
+            <button class="option-btn" onclick="checkAnswer(0)">Option 1</button>
+            <button class="option-btn" onclick="checkAnswer(1)">Option 2</button>
+            <button class="option-btn" onclick="checkAnswer(2)">Option 3</button>
+            <button class="option-btn" onclick="checkAnswer(4)">Option 4</button>
+        </div>
+        <p class="scoreCard" >Score: <span id="score">0</span></p>
+    </div>
+</body>
+<script>
+    function startQuiz(){
+    window.location.href = "quiz.html";
+}
+
+const quizData = [
+    {
+        question: "What is the capital of India?",
+        options: ["Delhi", "Mumbai", "Kolkata", "Chennai"],
+        answer: 0
+    },
+    {
+        question: "Which is the largest planet in our solar system?",
+        options: ["Earth", "Jupiter", "Mars", "Venus"],
+        answer: 1
+    },
+    {
+        question: "Who wrote the Indian national anthem?",
+        options: ["Rabindranath Tagore", "Mahatma Gandhi", "Jawaharlal Nehru", "Subhash Chandra Bose"],
+        answer: 0
+    },
+    {
+        question: "What is the smallest country in the world?",
+        options: ["Monaco", "Vatican City", "San Marino", "Liechtenstein"],
+        answer: 1
+    },
+    {
+        question: "Who was the first President of the United States?",
+        options: ["Abraham Lincoln", "Thomas Jefferson", "George Washington", "John Adams"],
+        answer: 2
+    },
+    {
+        question: "Which element has the chemical symbol 'O'?",
+        options: ["Oxygen", "Gold", "Osmium", "Ozone"],
+        answer: 0
+    },
+    {
+        question: "Which animal is known as the 'King of the Jungle'?",
+        options: ["Elephant", "Tiger", "Lion", "Giraffe"],
+        answer: 2
+    },
+    {
+        question: "What is the tallest mountain in the world?",
+        options: ["Mount Everest", "K2", "Mount Kilimanjaro", "Mont Blanc"],
+        answer: 0
+    },
+    {
+        question: "In which year did World War II end?",
+        options: ["1942", "1945", "1939", "1918"],
+        answer: 1
+    },
+    {
+        question: "What is the largest ocean on Earth?",
+        options: ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
+        answer: 3
+    },
+    {
+        question: "Which is the largest continent by area?",
+        options: ["Africa", "Asia", "Europe", "North America"],
+        answer: 1
+    },
+    {
+        question: "What is the currency of Japan?",
+        options: ["Yuan", "Yen", "Ringgit", "Won"],
+        answer: 1
+    },
+    {
+        question: "Who invented the telephone?",
+        options: ["Alexander Graham Bell", "Thomas Edison", "Nikola Tesla", "Michael Faraday"],
+        answer: 0
+    }
+];
+
+
+let currentQueIndex = 0;
+let score = 0;
+function loadQue(){
+    const question = document.getElementById("question");
+    const option = document.querySelectorAll(".option-btn");
+
+    question.innerHTML = quizData[currentQueIndex].question;
+    quizData[currentQueIndex].options.forEach((value, index) => {
+        option[index].innerHTML = value;
+    });
+    
+}
+
+function checkAnswer(index){
+    const scorecard = document.getElementById("score");
+    const que = document.getElementById("question");
+    const option = document.getElementById("options");
+    if(index == quizData[currentQueIndex].answer){
+        score++;
+        scorecard.innerHTML = score;
+    }
+    currentQueIndex++;
+    if(currentQueIndex < quizData.length){
+        loadQue();
+        
+    }else{
+        que.innerHTML = "Quiz Completed!";
+        option.innerHTML = `<p>Your final score is ${score}.</p>`;
+    }
+}
+loadQue();
+</script>
+</html>
