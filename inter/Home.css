@@ -1,0 +1,79 @@
+/* Basic styling */
+/* Smooth Green Gradient Background */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #A8E6CF, #27ae60); /* Light to Dark Green */
+  background-attachment: fixed; /* Keeps background in place while scrolling */
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* Adding a soft overlay effect to improve contrast */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://www.transparenttextures.com/patterns/green-dust.png'); /* Subtle pattern */
+  opacity: 0.1; /* Light pattern for texture */
+  z-index: -1;
+}
+
+
+/* Centered Header Section */
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full-screen height */
+  text-align: center;
+}
+
+/* Container for Content */
+.container {
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+  width: 90%;
+  max-width: 500px;
+}
+
+/* Heading Styling */
+h1 {
+  font-size: 2em;
+  color: #27ae60; /* Green theme */
+  margin-bottom: 10px;
+}
+
+/* Subtitle */
+p {
+  font-size: 1.2em;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Start Quiz Button */
+button {
+  background: #27ae60;
+  color: white;
+  border: none;
+  padding: 15px 20px;
+  font-size: 1.2em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover & Click Effects */
+button:hover {
+  background: #219150;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
